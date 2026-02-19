@@ -90,3 +90,12 @@ subprojects {
 }
 
 tasks.register<Delete>("clean") { delete(rootProject.layout.buildDirectory) }
+
+allprojects {
+  configurations.all {
+    resolutionStrategy {
+      force("jakarta.servlet:jakarta.servlet-api:6.0.0")
+      force("jakarta.mail:jakarta.mail-api:2.1.2")
+    }
+  }
+}
